@@ -1,0 +1,43 @@
+NPT production run for 1000 ns (1 microsecond)
+ &cntrl
+  imin=0,
+  irest=1,
+  ntx=5,
+
+  ntt=1,
+  temp0=310,
+
+  nstlim=500000000,  ! 1000 ns simulation
+  dt=0.002,
+  ntpr=250000,  ! Print energies every 250k steps (500 ps)
+  ntwx=250000,  ! Print coordinates every 250k steps (500 ps)
+  ntwr=500000,  ! Write restart file every 500k steps (1 ns) 
+  ntxo=2,
+  ioutfm=1,
+
+  ntc=2,
+  ntf=2,
+  
+  iwrap=1,
+  ntb=2,
+  barostat=1,
+  ntp=1,
+  pres0=1.0, 
+ 
+  icfe = 1, ifsc = 1, gti_cpu_output = 0, gti_add_sc = 1,
+  scmask1=':1-32', timask1=':1-32',
+  timask2 = '', scmask2 = '', 
+  
+  igamd=3,  ! GaMD dual boost scheme
+  iEP=2,  ! First boost on the upper bound
+  iED=1,  ! Second boost on the lower bound
+  irest_gamd=0,
+  ntcmd=7000000,  ! Initial cMD steps to collect potential statistics (14 ns)
+  ntave=1000000,
+  nteb=23000000,
+  ntebprep=23000000,  ! Pep-GaMD equilibration steps (46 ns)
+  sigma0D=6.0,
+  sigma0P=6.0,
+ /
+END
+

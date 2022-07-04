@@ -1,0 +1,28 @@
+NVT equilibration
+ &cntrl
+  imin=0,
+  irest=1,
+  ntx=5,
+
+  ntt=1,
+  temp0=310,
+
+  nstlim=100000,  ! 100k steps, 200 ps
+  dt=0.002,
+  ntpr=1000,
+  ntwx=5000,
+  ntwr=10000,
+  ntxo=2,
+  ioutfm=1,
+
+  ntb=1,
+  iwrap=1,
+
+  ntc=2,
+  ntf=2,
+
+  ntr=1,
+  restraint_wt=1.0,
+ /
+END
+

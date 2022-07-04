@@ -1,0 +1,15 @@
+Energy minimization with restraints
+ &cntrl
+  imin=1,  ! Minimization step
+  maxcyc=10000,  ! Maximum number of steps
+  ncyc=5000,  ! Number of steps to switch between SD and CG
+
+  ntpr=10,  ! Print energies every 1000 steps
+  ntxo=2,     ! Write NetCDF format
+  
+  ntr=1,  ! Positional restraints for proteins
+  restraint_wt=1.0,  ! Weight of the restraint constant
+ /
+END
+
+

@@ -1,0 +1,28 @@
+NPT equilibration without atomic restraints
+ &cntrl
+  imin=0,
+  irest=1,
+  ntx=5,
+
+  ntt=1,
+  temp0=310,
+
+  nstlim=1000000,  ! 2 ns simulation
+  dt=0.002,
+  ntpr=1000,
+  ntwx=50000,
+  ntwr=10000,
+  ntxo=2,
+  ioutfm=1,
+  
+  iwrap=1,
+  ntc=2,
+  ntf=2,
+
+  ntb=2,
+  barostat=1,  ! Berendsen barostat
+  ntp=1,  ! Isotropic scaling
+  pres0=1.0,  ! Pressure to achieve in bars
+ /
+END
+

@@ -1,0 +1,35 @@
+Heating from 0 to 100
+ &cntrl
+  imin=0,  ! No minimization
+  irest=0,  ! Not a restart of an old MD
+  ntx=1,  ! inpcrd has no velocities
+
+  ntt=1,  ! Berendsen thermostat
+  tempi=100,  ! Initial temperature
+  temp0=310,  ! Target temperature
+
+  nstlim=100000,  ! 100K steps, 200 ps total
+  dt=0.002,  ! time step (ps)
+  ntpr=1000,  ! Print energies every 1000 steps (2ps)
+  ntwx=5000,  ! Print coordinates every 5000 steps
+  ntwr=10000,  ! Print a restart file every 10K steps 
+  ntxo=2,  ! Write NetCDF format
+  ioutfm=1,  ! Write NetCDF format
+
+  ntc=2,  ! SHAKE algorithm applied to all bonds
+  ntf=2,  ! Bond potential ommited (SHAKE)
+
+  ntb=1,  ! PBC, constant volume
+  iwrap=1,  ! Coordinates wrapped to primary box
+
+  ntr=1,  ! Positional restraints for proteins
+  restraint_wt=1.0,  ! Weight for the restraint constant
+ &end
+ &wt
+  TYPE="TEMP0", istep1=0, istep2=100000,
+  value1=100., value2=300.,
+ &end
+ &wt
+  TYPE="END"
+ &end
+END
